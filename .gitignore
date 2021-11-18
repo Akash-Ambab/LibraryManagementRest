@@ -20,6 +20,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+#Dummy data
+Query/
+
 # Optional npm cache directory
 .npm
 
