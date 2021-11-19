@@ -1,12 +1,19 @@
-{
-    "bookName" : "Test",
-    "description" : "Test",
-    "authorName" : "Akash",
-    "genre" : "Fiction",
-    "price" : "123",
-    "language" : "English",
-    "totalPages" : "1000",
-    "rating" : "5.0",
-    "edition" : "1st",
-    "publication" : "Akash Publication"
-}
+[
+    {
+        "bookName" : "Test",
+        "description" : "Test",
+        "authorName" : "Akash",
+        "genre" : "Fiction",
+        "price" : "123",
+        "language" : "English",
+        "totalPages" : "1000",
+        "rating" : "5.0",
+        "edition" : "1st",
+        "publication" : "Akash Publication"
+    },
+    
+    {
+        "authorName": "Test Author 2",
+        "email": "akashsahani@gmail.com"
+    }
+]

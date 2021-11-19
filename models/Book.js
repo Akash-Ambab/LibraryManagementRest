@@ -1,19 +1,12 @@
-'use strict';
-const { max } = require('lodash');
-const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Book extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  };
-  Book.init({
+  const Book = sequelize.define('books', {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     bookId: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -64,10 +57,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: true,
     }
-  }, {
-    sequelize,
-    modelName: 'Book',
-    tableName: 'books'
   });
+
   return Book;
 };
