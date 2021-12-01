@@ -36,5 +36,9 @@ db.Sequelize = Sequelize;
 db.Book = require("./Book.js")(sequelize, Sequelize);
 db.Author = require("./Author.js")(sequelize, Sequelize);
 db.Genre = require("./Genre.js")(sequelize, Sequelize);
+db.BookAuthor = require("./BookAuthor.js")(sequelize, Sequelize);
+
+db.Book.belongsToMany(db.Author, { through: 'book_author' });
+db.Author.belongsToMany(db.Book, { through: 'book_author' });
 
 module.exports = db;

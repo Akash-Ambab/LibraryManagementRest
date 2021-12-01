@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       allowNull: false,
-      primaryKey: true
+      unique: true
     },
     bookName: {
       type: DataTypes.STRING,
@@ -19,10 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    authorName: {
-      type: DataTypes.STRING,
       allowNull: false,
     },
     genre: {

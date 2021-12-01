@@ -8,7 +8,6 @@ app.use(cors());
 app.use(express.json())
 
 app.use(express.urlencoded({ extended: true }));
-// db.sequelize.sync().then(() => console.log("DB Drop"))
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to library" });
@@ -17,43 +16,7 @@ app.get("/", (req, res) => {
 require("./routes/bookroute")(app)
 require("./routes/authorroute")(app)
 require("./routes/genreroute")(app)
-// app.post('/books', async(req, res) => {
-//   const {
-//     bookName,
-//     description,
-//     authorName,
-//     genre,
-//     price,
-//     language,
-//     totalPages,
-//     rating,
-//     edition,
-//     publication,
-//     released_on
-//   } = req.body
-
-//   try {
-//     const user = await Book.create({
-//       bookName,
-//       description,
-//       authorName,
-//       genre,
-//       price,
-//       language,
-//       totalPages,
-//       rating,
-//       edition,
-//       publication,
-//       released_on
-//     })
-
-//     return res.json(user)
-//   }
-//   catch(err) {
-//     console.log(err)
-//     return res.status(500).json(err)
-//   }
-// })
+require("./routes/book_author_route")(app)
 
 app.listen(5000, async() => {
   console.log('server started on http://localhost:5000')
